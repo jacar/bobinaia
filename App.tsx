@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { CoilDesignerForm } from './components/CoilDesignerForm';
 import { CoilPreview } from './components/CoilPreview';
-import Carousel from './components/Carousel';
+import ProductHeroCarousel from './components/ProductHeroCarousel';
 import { Modal } from './components/Modal';
 import { TermsPage } from './components/TermsPage';
 import { PrivacyPage } from './components/PrivacyPage';
@@ -97,40 +97,18 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 </div>
-              {/* Carrusel y banner */}
-<section className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto my-12 px-4">
-  <div className="w-full md:w-[520px] max-w-full mb-6 md:mb-0">
-    <Carousel
-      images={[
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/1111-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/155-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/34-1-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/015-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/45-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/BOBINA-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/56-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/51-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/15-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/11/02-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/10/9-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/10/K1-1-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/10/08-600x600.jpg",
-        "https://www.strongmeropower.com/wp-content/uploads/2023/10/3-600x600.jpg"
-      ]}
-      altPrefix="Bobina Strong Mero Power"
-    />
-  </div>
-  <div className="flex-shrink-0 flex flex-col items-center gap-4 w-full md:w-auto">
-    <a
-      href="https://www.strongmeropower.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block bg-red-600 hover:bg-white hover:text-red-700 text-white font-bold px-6 py-3 rounded-lg shadow border border-red-600 transition w-full sm:w-auto text-lg"
-    >
-      Visita nuestra tienda y busca tu modelo
-    </a>
-  </div>
-</section>
+              {/* Carrusel hero con texto a la izquierda */}
+<ProductHeroCarousel />
+<div className="flex justify-center my-4">
+  <a
+    href="https://www.strongmeropower.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-red-600 hover:bg-white hover:text-red-700 text-white font-bold px-6 py-3 rounded-lg shadow border border-red-600 transition text-lg"
+  >
+    Visita nuestra tienda y busca tu modelo
+  </a>
+</div>
 
 {/* Bloque institucional de texto */}
   <section className="max-w-3xl mx-auto my-12 px-6 py-8 bg-white/90 rounded-xl shadow-lg border border-slate-200 text-center">
