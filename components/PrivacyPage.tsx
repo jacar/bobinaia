@@ -26,9 +26,9 @@ export const PrivacyPage: React.FC = () => {
                     No recopilamos información personal identificable. Los parámetros de diseño que ingrese se procesan localmente en su navegador y no se almacenan en nuestros servidores.
                 </p>
                 
-                <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">Uso de la IA</h4>
+                <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">Procesamiento de Datos</h4>
                 <p className="mb-4">
-                    Cuando utiliza el Asistente de IA, sus descripciones se envían a Google Gemini para generar sugerencias. Esta información se procesa según los términos de servicio de Google y no se almacena permanentemente.
+                    Todos los cálculos y generación de parámetros se realizan localmente en su dispositivo. No enviamos datos a servidores externos.
                 </p>
                 
                 <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">Cookies y Almacenamiento</h4>

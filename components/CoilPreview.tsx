@@ -63,34 +63,44 @@ ${generatedCode}
                 
                 {/* SVG Diagram */}
                 <div className="mt-6 flex justify-center">
-                    <svg width="600" height="400" viewBox="0 0 600 400" className="w-full max-w-lg">
-                        {/* Background */}
-                        <rect width="600" height="400" fill="white" />
-                        
-                        {/* Arrow indicators */}
-                        <g className="text-slate-400">
-                            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-                        </g>
-                        
-                        {/* Title */}
+                    <svg viewBox="0 0 850 340" className="w-full h-full">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+                                markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" className="text-slate-400" />
+                            </marker>
+                        </defs>
+
                         <g className="font-orbitron text-slate-900 text-lg" textAnchor="middle">
-                            <text x="300" y="30">Diseño de Bobina para Parlantes</text>
+                            <text x="60" y="40">{params.material}</text>
+                            <text x="155" y="40">{params.internalDiameter}</text>
+                            <text x="250" y="40">{params.coilHeight}</text>
+                            <text x="345" y="40">{params.windingHeight}</text>
+                            <text x="440" y="40">{params.numberOfLayers}</text>
+                            <text x="535" y="40">{`${params.impedance}Ω`}</text>
                         </g>
-                        
-                        {/* Coil representation */}
+
                         <g className="stroke-slate-400" strokeWidth="2">
-                            <circle cx="200" cy="200" r="80" fill="none" />
-                            <circle cx="200" cy="200" r="60" fill="none" />
-                            <circle cx="200" cy="200" r="40" fill="none" />
+                            <line x1="60" y1="50" x2="535" y2="50" />
+                            <line x1="60" y1="50" x2="60" y2="310" />
+                            <line x1="155" y1="50" x2="155" y2="280" />
+                            <line x1="250" y1="50" x2="250" y2="250" />
+                            <line x1="345" y1="50" x2="345" y2="220" />
+                            <line x1="440" y1="50" x2="440" y2="190" />
+                            <line x1="535" y1="50" x2="535" y2="160" />
                         </g>
                         
-                        {/* Measurements */}
                         <g className="font-sans text-slate-600" fontSize="14">
                             <g className="stroke-slate-400" strokeWidth="1">
-                                <line x1="290" y1="120" x2="290" y2="280" />
-                                <line x1="280" y1="120" x2="300" y2="120" />
-                                <line x1="280" y1="280" x2="300" y2="280" />
+                                <line x1="60" y1="310" x2="500" y2="310" markerEnd="url(#arrow)" />
+                                <line x1="155" y1="280" x2="500" y2="280" markerEnd="url(#arrow)" />
+                                <line x1="250" y1="250" x2="500" y2="250" markerEnd="url(#arrow)" />
+                                <line x1="345" y1="220" x2="500" y2="220" markerEnd="url(#arrow)" />
+                                <line x1="440" y1="190" x2="500" y2="190" markerEnd="url(#arrow)" />
+                                <line x1="535" y1="160" x2="500" y2="160" markerEnd="url(#arrow)" />
                             </g>
+                            
                             <text x="510" y="314" className="fill-slate-600">Material de la bobina</text>
                             <text x="510" y="284" className="fill-slate-600">Diámetro interno</text>
                             <text x="510" y="254" className="fill-slate-600">Altura del material de la bobina</text>

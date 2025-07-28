@@ -23,12 +23,12 @@ export const TermsPage: React.FC = () => {
                 
                 <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">Uso de la Herramienta</h4>
                 <p className="mb-4">
-                    Esta aplicación utiliza inteligencia artificial para sugerir parámetros de diseño basados en descripciones de proyectos. Los resultados son estimaciones y deben ser validados por profesionales antes de su implementación.
+                    Esta aplicación le permite diseñar parámetros de bobinas para parlantes de manera manual. Los resultados son estimaciones y deben ser validados por profesionales antes de su implementación.
                 </p>
                 
                 <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">Limitaciones</h4>
                 <p className="mb-4">
-                    Las sugerencias de la IA son informativas y no garantizan resultados específicos. Siempre consulte con expertos en audio y realice pruebas antes de implementar cualquier diseño.
+                    Los parámetros generados son informativos y no garantizan resultados específicos. Siempre consulte con expertos en audio y realice pruebas antes de implementar cualquier diseño.
                 </p>
             </div>
             <p className="mb-6 text-sm text-slate-500">Última actualización: {new Date().toLocaleDateString()}</p>

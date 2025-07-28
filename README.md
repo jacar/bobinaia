@@ -1,14 +1,29 @@
-# Run and deploy your AI Studio app
+# Diseñador de Bobinas para Parlantes
 
-This contains everything you need to run your app locally.
+Esta aplicación permite diseñar y simular especificaciones de bobinas para parlantes de manera precisa y eficiente.
 
-## Run Locally
+## Características
 
-**Prerequisites:**  Node.js
+- Diseño manual de parámetros de bobinas
+- Vista previa en tiempo real
+- Exportación de especificaciones
+- Interfaz intuitiva y responsive
 
+## Instalación
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clona el repositorio
+2. Instala las dependencias: `npm install`
+3. Ejecuta el servidor de desarrollo: `npm run dev`
+
+## Uso
+
+1. Ajusta los parámetros de la bobina en el formulario
+2. Visualiza los cambios en tiempo real
+3. Copia o descarga las especificaciones generadas
+
+## Tecnologías
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
