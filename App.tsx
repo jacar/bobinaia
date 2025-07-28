@@ -66,7 +66,7 @@ const App: React.FC = () => {
                     className="relative text-center py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
                     style={{ backgroundImage: `url('https://www.strongmeropower.com/wp-content/uploads/2025/07/header.png')` }}
                 >
-                    <div className="absolute inset-0 bg-slate-900/60"></div>
+                    <div className="absolute inset-0 bg-black/40"></div>
                     <div className="relative">
                         <h1 className="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-shadow">
                             Diseñador de Bobinas para Parlantes
@@ -77,7 +77,7 @@ const App: React.FC = () => {
                         <div className="mt-8 flex justify-center">
                             <button
                                 onClick={handleScrollToDesigner}
-                                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold text-white shadow-sm bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-transform duration-200 hover:scale-105"
+                                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold text-white shadow-sm bg-red-600 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-transform duration-200 hover:scale-105"
                             >
                                 Empezar a Diseñar
                             </button>
@@ -96,7 +96,22 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+              {/* Bloque institucional de texto */}
+  <section className="max-w-3xl mx-auto my-12 px-6 py-8 bg-white/90 rounded-xl shadow-lg border border-slate-200 text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-red-700 mb-2">Bobinas de Alta Calidad para Sistemas de Audio</h2>
+    <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4">Pioneros en Componentes de Sonido de Alta Calidad</h3>
+    <h4 className="text-base font-semibold text-slate-700 mb-2">Características y Beneficios</h4>
+    <p className="text-slate-700 mb-2">
+      Pioneros en la Fabricación de Bobinas de Calidad en Colombia. Somos líderes en la producción de componentes de sonido de alta calidad para altavoces y equipos de sonido en el mercado colombiano. Nuestra experiencia y compromiso con la excelencia nos han posicionado como fabricantes destacados en la industria.
+    </p>
+    <p className="text-slate-700 mb-2">
+      Descubre nuestras bobinas de voz de primera categoría, diseñadas y fabricadas en Colombia, que garantizan un sonido óptimo y una confiabilidad inigualable. Explore nuestro catálogo de productos, con opciones personalizadas y estándar, y dé un paso adelante en su experiencia de sonido.
+    </p>
+    <p className="text-slate-700">
+      Confíe en <span className="font-bold text-red-700">Strong Mero Power</span> para sus necesidades de bobinas y componentes de sonido de alta fidelidad en Colombia.
+    </p>
+  </section>
+</main>
             <footer className="w-full bg-white py-4 mt-8 border-t border-slate-200">
                 <div className="px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
                     <p>&copy; {new Date().getFullYear()} Diseñador de Bobinas para Parlantes. Todos los derechos reservados.</p>

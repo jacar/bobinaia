@@ -6,7 +6,7 @@ import type { ModalType } from '../App';
 const NavButton: React.FC<{ children: React.ReactNode; onClick: () => void }> = ({ children, onClick }) => (
     <button
         onClick={onClick}
-        className="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+        className="bg-red-600 text-white hover:bg-white hover:text-red-700 px-3 py-2 rounded-md text-sm font-bold transition-colors border border-red-600 w-full sm:w-auto"
     >
         {children}
     </button>
@@ -49,7 +49,7 @@ export const Header: React.FC<{
                             <NavButton onClick={() => handleNavClick('terms')}>Política de Uso</NavButton>
                             <NavButton onClick={() => handleNavClick('privacy')}>Política de Privacidad</NavButton>
                             <NavButton onClick={() => handleNavClick('contact')}>Contacto</NavButton>
-                             <a href="https://www.strongmeropower.com/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1.5">
+                             <a href="https://www.strongmeropower.com/" target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white hover:bg-white hover:text-red-700 px-3 py-2 rounded-md text-sm font-bold transition-colors border border-red-600 flex items-center space-x-1.5 w-full sm:w-auto">
                                 <ShopIcon className="h-5 w-5" />
                                 <span>Tienda</span>
                             </a>
@@ -71,11 +71,11 @@ export const Header: React.FC<{
             {isMenuOpen && (
                 <div className="md:hidden absolute top-16 inset-x-0 bg-white h-screen z-50">
                     <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3 flex flex-col items-center justify-center h-full -mt-16">
-                        <button onClick={() => { window.location.href='#'; setIsMenuOpen(false); }} className="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium transition-colors">Inicio</button>
+                        <button onClick={() => { window.location.href='#'; setIsMenuOpen(false); }} className="bg-red-600 text-white hover:bg-white hover:text-red-700 px-3 py-2 rounded-md text-base font-bold transition-colors border border-red-600 w-full sm:w-auto">Inicio</button>
                         <NavButton onClick={() => handleNavClick('terms')}>Política de Uso</NavButton>
                         <NavButton onClick={() => handleNavClick('privacy')}>Política de Privacidad</NavButton>
                         <NavButton onClick={() => handleNavClick('contact')}>Contacto</NavButton>
-                        <a href="https://www.strongmeropower.com/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center space-x-1.5">
+                        <a href="https://www.strongmeropower.com/" target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white hover:bg-white hover:text-red-700 px-3 py-2 rounded-md text-base font-bold transition-colors border border-red-600 flex items-center space-x-1.5 w-full sm:w-auto">
                             <ShopIcon className="h-5 w-5" />
                             <span>Tienda</span>
                         </a>

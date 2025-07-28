@@ -31,7 +31,7 @@ const InputField: React.FC<{
                 min={min}
                 max={max}
                 step={step}
-                className="block w-full rounded-md border-0 py-2 pl-3 pr-12 bg-white text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm transition-shadow"
+                className="block w-full rounded-md border border-black py-2 pl-3 pr-12 bg-white text-slate-900 focus:border-black focus:ring-black placeholder:text-slate-400 sm:text-sm transition-shadow"
             />
             <span className="text-slate-500 sm:text-sm">{unit}</span>
         </div>
@@ -53,7 +53,7 @@ export const CoilDesignerForm: React.FC<CoilDesignerFormProps> = ({ params, onPa
                         id="material"
                         value={params.material}
                         onChange={(e) => onParamChange('material', e.target.value as CoilMaterial)}
-                        className="mt-1 block w-full rounded-md border-0 bg-white py-2 pl-3 pr-10 text-slate-900 ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm transition-shadow"
+                        className="mt-1 block w-full rounded-md border border-black bg-white py-2 pl-3 pr-10 text-slate-900 focus:border-black focus:ring-black sm:text-sm transition-shadow"
                     >
                         {MATERIAL_OPTIONS.map((option) => (
                             <option key={option.value} value={option.value}>
