@@ -13,5 +13,3 @@ export interface CoilParameters {
   impedance: number;
   numberOfLayers: number;
 }
-
-export type Theme = 'light' | 'dark';

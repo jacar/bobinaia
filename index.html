@@ -19,25 +19,6 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
   </style>
-  <script>
-    // Inicialización del tema antes de que React se cargue para evitar FOUC
-    (function() {
-      try {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      } catch (error) {
-        console.warn('Error al inicializar el tema:', error);
-        // Fallback: mantener el tema claro por defecto
-        document.documentElement.classList.remove('dark');
-      }
-    })();
-  </script>
 <script type="importmap">
 {
   "imports": {
@@ -50,7 +31,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300">
+<body class="bg-slate-50 text-slate-800">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

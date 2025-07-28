@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { CoilDesignerForm } from './components/CoilDesignerForm';
 import { CoilPreview } from './components/CoilPreview';
@@ -10,7 +10,6 @@ import { PrivacyPage } from './components/PrivacyPage';
 import { ContactPage } from './components/ContactPage';
 import type { CoilParameters } from './types';
 import { CoilMaterial } from './types';
-import { useTheme } from './hooks/useTheme';
 
 export type ModalType = 'terms' | 'privacy' | 'contact';
 
@@ -26,8 +25,6 @@ const App: React.FC = () => {
     });
     const designerRef = useRef<HTMLDivElement>(null);
     const [activeModal, setActiveModal] = useState<ModalType | null>(null);
-
-    const { theme, toggleTheme } = useTheme();
 
     const handleScrollToDesigner = () => {
         designerRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -67,7 +64,7 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <Header onShowModal={setActiveModal} theme={theme} onToggleTheme={toggleTheme} />
+            <Header onShowModal={setActiveModal} />
             <main className="flex-grow">
                 {/* Hero Section */}
                 <div 
@@ -96,7 +93,7 @@ const App: React.FC = () => {
                 {/* Designer Section */}
                 <div ref={designerRef} id="designer" className="p-4 sm:p-6 lg:p-8">
                     <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div className={`bg-white dark:bg-slate-900 rounded-lg p-6 shadow-lg ring-1 ring-slate-200 dark:ring-slate-800 transition-opacity duration-300 ${isLoading ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
+                        <div className={`bg-white rounded-lg p-6 shadow-lg ring-1 ring-slate-200 transition-opacity duration-300 ${isLoading ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
                             <CoilDesignerForm params={coilParams} onParamChange={handleParamChange} />
                             <AiAssistant onSuggestionReady={handleAiSuggestion} setIsLoading={setIsLoading} isLoading={isLoading} />
                         </div>
@@ -108,19 +105,19 @@ const App: React.FC = () => {
 
                 {/* Loading Overlay */}
                 {isLoading && (
-                    <div className="fixed inset-0 bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50">
+                    <div className="fixed inset-0 bg-slate-100/80 backdrop-blur-sm flex items-center justify-center z-50">
                         <div className="flex flex-col items-center">
-                            <svg className="animate-spin h-10 w-10 text-indigo-600 dark:text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <svg className="animate-spin h-10 w-10 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
-                            <p className="mt-4 text-lg font-semibold font-orbitron text-indigo-700 dark:text-sky-300">La IA está pensando...</p>
+                            <p className="mt-4 text-lg font-semibold font-orbitron text-indigo-700">La IA está pensando...</p>
                         </div>
                     </div>
                 )}
             </main>
-            <footer className="w-full bg-white dark:bg-slate-900 py-4 mt-8 border-t border-slate-200 dark:border-slate-800">
-                <div className="px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            <footer className="w-full bg-white py-4 mt-8 border-t border-slate-200">
+                <div className="px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
                     <p>&copy; {new Date().getFullYear()} Diseñador de Bobinas para Parlantes. Todos los derechos reservados.</p>
                     <p className="mt-1">Creado por Armando Ovalle J.</p>
                 </div>
