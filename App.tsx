@@ -8,8 +8,9 @@ import { Modal } from './components/Modal';
 import { TermsPage } from './components/TermsPage';
 import { PrivacyPage } from './components/PrivacyPage';
 import { ContactPage } from './components/ContactPage';
-import type { CoilParameters, Theme } from './types';
+import type { CoilParameters } from './types';
 import { CoilMaterial } from './types';
+import { useTheme } from './hooks/useTheme';
 
 export type ModalType = 'terms' | 'privacy' | 'contact';
 
@@ -26,26 +27,7 @@ const App: React.FC = () => {
     const designerRef = useRef<HTMLDivElement>(null);
     const [activeModal, setActiveModal] = useState<ModalType | null>(null);
 
-    const [theme, setTheme] = useState<Theme>(() => {
-        if (typeof window !== 'undefined' && document.documentElement.classList.contains('dark')) {
-            return 'dark';
-        }
-        return 'light';
-    });
-
-    useEffect(() => {
-        const root = document.documentElement;
-        if (theme === 'dark') {
-            root.classList.add('dark');
-        } else {
-            root.classList.remove('dark');
-        }
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme(currentTheme => (currentTheme === 'light' ? 'dark' : 'light'));
-    };
+    const { theme, toggleTheme } = useTheme();
 
     const handleScrollToDesigner = () => {
         designerRef.current?.scrollIntoView({ behavior: 'smooth' });

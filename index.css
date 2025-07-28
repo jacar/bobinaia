@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuración personalizada para el modo oscuro */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+/* Configuración específica para modo oscuro */
+@layer utilities {
+  .dark {
+    color-scheme: dark;
+  }
+  
+  /* Transiciones suaves para cambios de tema */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
+
+/* Configuración de Tailwind para modo oscuro */
+@layer components {
+  .dark .bg-white {
+    background-color: rgb(15 23 42); /* slate-900 */
+  }
+  
+  .dark .text-slate-800 {
+    color: rgb(241 245 249); /* slate-100 */
+  }
+  
+  .dark .border-slate-200 {
+    border-color: rgb(51 65 85); /* slate-700 */
+  }
+  
+  .dark .ring-slate-200 {
+    --tw-ring-color: rgb(51 65 85); /* slate-700 */
+  }
+} 
