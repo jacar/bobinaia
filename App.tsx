@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { CoilDesignerForm } from './components/CoilDesignerForm';
 import { CoilPreview } from './components/CoilPreview';
+import Carousel from './components/Carousel';
 import { Modal } from './components/Modal';
 import { TermsPage } from './components/TermsPage';
 import { PrivacyPage } from './components/PrivacyPage';
