@@ -12,7 +12,7 @@ const NavButton: React.FC<{ children: React.ReactNode; onClick: () => void }> = 
     </button>
 );
 
-export const Header: React.FC<{ 
+export const Header: React.FC<{
     onShowModal: (modal: ModalType) => void;
 }> = ({ onShowModal }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,19 +31,21 @@ export const Header: React.FC<{
     };
 
     return (
-        <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40">
-            <div className="px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex-shrink-0">
+        <header className="bg-gradient-to-r from-red-100 via-white to-red-50 shadow-md sticky top-0 z-40">
+            <div className="px-4 sm:px-6 lg:px-8 pb-2 pt-2">
+                <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="flex items-center space-x-3 mb-2 sm:mb-0">
                         <button onClick={() => window.location.href = '#'} className="flex items-center space-x-2">
-                             <img 
-                                className="h-10 w-auto" 
+                            <img 
+                                className="h-12 w-auto drop-shadow" 
                                 src="https://dise-o-de-bobinas.vercel.app/logo.png" 
                                 alt="Logo Diseñador de Bobinas para Parlantes" 
                             />
-                             <span className="font-orbitron font-bold text-slate-800 hidden sm:inline">Diseñador de Bobinas para Parlantes</span>
+                            <span className="font-orbitron font-bold text-slate-800 text-lg sm:text-xl">Diseñador de Bobinas</span>
                         </button>
+
                     </div>
+
                     <div className="hidden md:block">
                         <nav className="ml-10 flex items-center space-x-2">
                             <NavButton onClick={() => handleNavClick('terms')}>Política de Uso</NavButton>
