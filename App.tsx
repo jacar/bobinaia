@@ -1,6 +1,5 @@
 
 import React, { useState, useRef } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/Header';
 import { CoilDesignerForm } from './components/CoilDesignerForm';
 import { CoilPreview } from './components/CoilPreview';
@@ -15,12 +14,7 @@ import { CoilMaterial } from './types';
 export type ModalType = 'terms' | 'privacy' | 'contact';
 
 const App: React.FC = () => {
-    // HelmetProvider debe envolver todo el contenido de la app
-    return (
-        <HelmetProvider>
-            <AppContent />
-        </HelmetProvider>
-    );
+    return <AppContent />;
 };
 
 const AppContent: React.FC = () => {
@@ -68,21 +62,9 @@ const AppContent: React.FC = () => {
         }
     };
 
-    return (
-        <>
-            <Helmet>
-                <title>Diseñador de Bobinas para Parlantes | Strong Mero Power Colombia</title>
-                <meta name="description" content="Calcula y visualiza bobinas de voz personalizadas para parlantes profesionales y automotrices. Fabricación nacional, materiales premium y asesoría técnica en Colombia." />
-                <meta name="keywords" content="bobinas, parlantes, diseño de bobinas, audio, Colombia, Strong Mero Power, altavoces, componentes, sonido, fabricación" />
-                <meta property="og:title" content="Diseñador de Bobinas para Parlantes" />
-                <meta property="og:description" content="Crea y visualiza tus propias bobinas de voz para altavoces. Soluciones profesionales y materiales de calidad en Colombia." />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.strongmeropower.com/" />
-                <meta property="og:image" content="https://www.webcincodev.com/blog/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-26-at-1.51.06-PM.jpeg" />
-                <meta name="author" content="Armando Ovalle J." />
-                <html lang="es" />
-            </Helmet>
-            <div className="min-h-screen flex flex-col">
+            return (
+            <>
+                <div className="min-h-screen flex flex-col">
                 <Header onShowModal={setActiveModal} />
                 <main className="flex-grow">
                     {/* Hero Section */}
